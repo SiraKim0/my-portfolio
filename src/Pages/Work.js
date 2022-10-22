@@ -1,3 +1,5 @@
+import { WorkContainer } from "./MainStyle";
+
 export default function Work() {
-  return <div className="work"></div>;
+  return <WorkContainer>Work</WorkContainer>;
 }

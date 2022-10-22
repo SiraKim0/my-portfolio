@@ -3,6 +3,8 @@ import { MainContainer } from "./MainStyle";
 export default function Main() {
   return (
     <MainContainer>
+      <div className="main-cursor"></div>
+      <div className="secondary-cursor"></div>
       <div className="content">
         <div className="row">
           <span className="text">K</span>

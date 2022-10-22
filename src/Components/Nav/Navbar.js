@@ -14,7 +14,7 @@ export default function Navbar() {
           <NavLink to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink to="/skil">My skills</NavLink>
+          <NavLink to="/skill">My skills</NavLink>
         </li>
         <li>
           <NavLink to="/work">Work</NavLink>

@@ -1,3 +1,5 @@
+import { ContactContainer } from "./MainStyle";
+
 export default function Contact() {
-  return <div className="contact"></div>;
+  return <ContactContainer>contact</ContactContainer>;
 }

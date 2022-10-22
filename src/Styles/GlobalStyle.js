@@ -6,6 +6,10 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+    a{
+      color: aliceblue;
+      text-decoration: none;
+    }
 `;
 export const Container = styled.div`
   width: 100vw;
