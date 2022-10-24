@@ -3,11 +3,9 @@ import { Container } from "../Styles/GlobalStyle";
 
 export const MainContainer = styled(Container)`
   display: flex;
-  justify-content: center;
-  align-items: center;
   .content {
-    width: 1200px;
-    border: 1px solid red;
+    width: 100%;
+    padding: 2rem 3rem;
     .row .text {
       color: #f2f2f2;
       display: inline-block;
@@ -73,3 +71,5 @@ export const SkillContainer = styled(Container)`
   justify-content: center;
   align-items: center;
 `;
+
+export const TestContiner = styled(Container)``;

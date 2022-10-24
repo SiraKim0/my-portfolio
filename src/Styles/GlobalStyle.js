@@ -12,7 +12,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 export const Container = styled.div`
-  width: 100vw;
+  position: relative;
   height: 100vh;
   background-color: #222222;
+`;
+export const Button = styled.button`
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
 `;

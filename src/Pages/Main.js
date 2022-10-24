@@ -1,10 +1,10 @@
 import { MainContainer } from "./MainStyle";
+import NavBar from "../Components/Nav/Navbar";
 
 export default function Main() {
   return (
     <MainContainer>
-      <div className="main-cursor"></div>
-      <div className="secondary-cursor"></div>
+      <NavBar />
       <div className="content">
         <div className="row">
           <span className="text">K</span>

@@ -1,16 +1,44 @@
 import styled from "styled-components";
+import { Button } from "../../Styles/GlobalStyle";
 
 export const NavContainer = styled.nav`
-  position: fixed;
-  padding: 10px;
-  height: 100vh;
-  background-color: black;
-  color: aliceblue;
-  .logo {
-    width: 150px;
-    border-bottom: 4px solid orange;
-    img {
-      width: 100%;
+  background-color: #181818;
+  width: 13rem;
+  .desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+  }
+  ul {
+    text-align: center;
+    li {
+      padding: 1rem;
+      border-top: 1px solid #909096;
+      border-bottom: 1px solid #909096;
     }
   }
+  .link {
+    width: 100%;
+    text-align: center;
+    padding: 5rem 0;
+  }
+  .mobile {
+    display: none;
+  }
+  .logo {
+    img {
+      width: 100%;
+      background-color: black;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+`;
+export const IconBtn = styled(Button)`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 1rem;
 `;
