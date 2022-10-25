@@ -4,6 +4,7 @@ import { Button } from "../../Styles/GlobalStyle";
 export const NavContainer = styled.nav`
   background-color: #181818;
   width: 13rem;
+  z-index: 9999;
   .desktop {
     display: flex;
     flex-direction: column;
