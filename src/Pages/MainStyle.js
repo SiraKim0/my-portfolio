@@ -5,10 +5,21 @@ export const MainContainer = styled(Container)`
   display: flex;
   .content {
     width: 100%;
+    height: 100vh;
     padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     .row .text {
       color: #f2f2f2;
       display: inline-block;
+    }
+    .row .aa {
+      display: inline;
+      vertical-align: middle;
+      border-right: 0.05em solid black;
+      animation: cursor 0.2s ease infinite;
     }
     .text {
       :hover {
@@ -20,7 +31,7 @@ export const MainContainer = styled(Container)`
         0% {
           transform: scale(1);
         }
-        50% {
+        30% {
           transform: scaleX(1.3);
           transform: scaleY(0.7);
         }
@@ -38,11 +49,9 @@ export const MainContainer = styled(Container)`
       }
     }
     .row:nth-child(1) {
-      border: 1px solid blue;
       font-size: 90px;
     }
     .row:nth-child(3) {
-      border: 1px solid blue;
       font-size: 40px;
     }
   }
