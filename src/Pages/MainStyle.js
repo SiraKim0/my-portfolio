@@ -94,7 +94,6 @@ export const MainContainer = styled(Container)`
       flex-direction: column;
     }
   }
-  }
 `;
 
 export const AboutContiner = styled(Container)`
