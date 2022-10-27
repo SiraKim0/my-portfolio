@@ -1,6 +1,7 @@
 import { MainContainer } from "./MainStyle";
-import NavBar from "../Components/Nav/Navbar";
+import Navbar from "../Components/Nav/Navbar";
 import { useEffect, useState } from "react";
+import { ImFolderOpen } from "react-icons/im";
 
 export default function Main() {
   const name = "DOSI";
@@ -11,6 +12,7 @@ export default function Main() {
   const [infoCount, setInfoCount] = useState(0);
   const textArr = [...nameText];
   const textArr2 = [...infoText];
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,6 +31,9 @@ export default function Main() {
     if (infoCount === info.length) {
       clearInterval(interval2);
     }
+    setTimeout(() => {
+      setHidden(true);
+    }, "5000");
     return () => {
       clearInterval(interval);
       clearInterval(interval2);
@@ -36,27 +41,34 @@ export default function Main() {
   });
   return (
     <MainContainer>
-      <NavBar />
+      <Navbar />
       <div className="content">
         <div className="row">
-          {textArr.map((text, idx) => {
-            return (
-              <span key={idx} className="text">
-                {text}
-              </span>
-            );
-          })}
+          <div className="name">
+            {textArr.map((text, idx) => {
+              return (
+                <span key={idx} className="text">
+                  {text}
+                </span>
+              );
+            })}
+          </div>
+          <div className="info">
+            {textArr2.map((text, idx) => {
+              return (
+                <span key={idx} className="text">
+                  {text}
+                </span>
+              );
+            })}
+          </div>
         </div>
-        <br />
-        <div className="row">
-          {textArr2.map((text, idx) => {
-            return (
-              <span key={idx} className="text">
-                {text}
-              </span>
-            );
-          })}
-        </div>
+        {hidden ? (
+          <div className="folder">
+            <ImFolderOpen size="250" color="white" />
+            <button>show work</button>
+          </div>
+        ) : null}
       </div>
     </MainContainer>
   );
