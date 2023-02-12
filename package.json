@@ -1,0 +1,35 @@
+{
+  "name": "my-log-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiraKim0/my-log-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SiraKim0/my-log-project/issues"
+  },
+  "homepage": "https://github.com/SiraKim0/my-log-project#readme",
+  "dependencies": {
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "@types/react": "^18.0.28",
+    "eslint": "^8.34.0",
+    "eslint-config-next": "^13.1.6",
+    "typescript": "^4.9.5"
+  }
+}
