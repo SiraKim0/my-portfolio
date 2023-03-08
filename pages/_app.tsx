@@ -1,5 +1,11 @@
-const App: React.FC = () => {
-  return <div>TEST</div>;
-};
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+import { ThemeProvider } from "next-themes";
 
-export default App;
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <ThemeProvider attribute="class">
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}

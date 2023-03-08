@@ -1,35 +1,33 @@
 {
   "name": "my-log-project",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SiraKim0/my-log-project.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SiraKim0/my-log-project/issues"
-  },
-  "homepage": "https://github.com/SiraKim0/my-log-project#readme",
   "dependencies": {
-    "next": "^13.1.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "autoprefixer": "^10.4.13",
+    "dotenv": "^16.0.3",
+    "next": "13.2.3",
+    "next-themes": "^0.2.1",
+    "notion-types": "^6.16.0",
+    "notion-utils": "^6.16.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^18.13.0",
+    "@types/node": "^18.14.6",
     "@types/react": "^18.0.28",
-    "eslint": "^8.34.0",
-    "eslint-config-next": "^13.1.6",
+    "@types/react-dom": "^18.0.11",
+    "eslint": "^8.35.0",
+    "eslint-config-next": "^13.2.3",
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.4",
+    "react-lottie-player": "^1.5.4",
+    "tailwindcss": "^3.2.7",
     "typescript": "^4.9.5"
   }
 }
