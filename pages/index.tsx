@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import Hero from "../components/home/hero";
 
-export default function Home() {
+const Home = () => {
   return (
     <Layout>
       <Head>
@@ -17,4 +17,5 @@ export default function Home() {
       </section>
     </Layout>
   );
-}
+};
+export default Home;
