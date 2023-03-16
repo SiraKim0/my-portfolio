@@ -1,4 +1,9 @@
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import {
+  GetStaticPaths,
+  GetStaticProps,
+  GetStaticPropsContext,
+  NextPage,
+} from "next";
 import Layout from "../../components/layout";
 import { useRouter } from "next/router";
 import notionService from "../api";
@@ -6,25 +11,24 @@ import { DATABASE_ID } from "@/config";
 import { NotionPostDataType } from "@/types";
 import { AxiosResponse } from "axios";
 import dynamic from "next/dynamic";
+import notionApi from "../api/notionApi";
 
-// const BlogPostDetail = dynamic(
-//   () => import("../../components/blog/blogs-detail")
-// );
+const BlogPostDetail = dynamic(
+  () => import("../../components/blog/blogs-detail")
+);
 
-const BlogPost = ({ post }) => {
+type blogPostProps = {
+  recordMap: NotionPostDataType;
+};
+
+const BlogPost: NextPage<blogPostProps> = ({ recordMap }) => {
   const { id } = useRouter().query;
-  console.log("post", post);
+  console.log(recordMap);
 
   return (
-    <>
-      <Layout>
-        <h1>
-          {post.properties.title.title.map((item) => {
-            return <>{item.text.content}</>;
-          })}
-        </h1>
-      </Layout>
-    </>
+    <Layout>
+      <BlogPostDetail data={recordMap} />
+    </Layout>
   );
 };
 
@@ -49,25 +53,22 @@ export const getStaticProps: GetStaticProps = async ({
   //1
   // const notion = new Client({ auth: process.env.NOTION_TOKEN });
   // const blockID = params?.id?.toString() || "";
-  // const post = await notion.blocks.children.list({
+  // const posts = await notion.blocks.children.list({
   //   block_id: blockID,
   // });
   // return {
   //   props: {
-  //     post,
+  //     posts,
   //   },
   // };
 
   //2
   const pageId = params?.id?.toString() || "";
-  const res = await notionService.get<
-    NotionPostDataType,
-    AxiosResponse<NotionPostDataType>
-  >(`/pages/${pageId}`);
-  const data = res.data;
+  const recordMap = await notionApi.getPage(pageId);
   return {
     props: {
-      post: data,
+      recordMap,
     },
+    revalidate: 10,
   };
 };
