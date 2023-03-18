@@ -6,6 +6,7 @@ import { NotionPostDataType } from "@/types";
 import notionService from "../api";
 import { PROJECT_DATABASE_ID } from "@/config";
 import { AxiosResponse } from "axios";
+import { getNotionProjectPost } from "../api/notionApi";
 
 type projectProps = {
   projects: NotionPostDataType;
@@ -44,10 +45,20 @@ const Project: NextPage<projectProps> = ({ projects }) => {
 export default Project;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await notionService.post<
-    NotionPostDataType,
-    AxiosResponse<NotionPostDataType>
-  >(`/databases/${PROJECT_DATABASE_ID}/query`);
+  const res = await getNotionProjectPost({
+    filter: {
+      property: "status",
+      status: {
+        equals: "Upload",
+      },
+    },
+    sorts: [
+      {
+        property: "date",
+        direction: "descending",
+      },
+    ],
+  });
 
   const projects = res.data;
 

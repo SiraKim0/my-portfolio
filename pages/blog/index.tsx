@@ -3,9 +3,7 @@ import { GetStaticProps, NextPage } from "next";
 import Layout from "@/components/layout";
 import BlogItem from "@/components/blog/blogs-item";
 import { NotionPostDataType } from "@/types";
-import notionService from "../api";
-import { BLOG_DATABASE_ID } from "@/config";
-import { AxiosResponse } from "axios";
+import { getNotionBlogPost } from "../api/notionApi";
 
 type blogProps = {
   blogs: NotionPostDataType;
@@ -47,10 +45,20 @@ const Blog: NextPage<blogProps> = ({ blogs }) => {
 export default Blog;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await notionService.post<
-    NotionPostDataType,
-    AxiosResponse<NotionPostDataType>
-  >(`/databases/${BLOG_DATABASE_ID}/query`);
+  const res = await getNotionBlogPost({
+    filter: {
+      property: "status",
+      status: {
+        equals: "Upload",
+      },
+    },
+    sorts: [
+      {
+        property: "date",
+        direction: "descending",
+      },
+    ],
+  });
 
   const blogs = res.data;
 

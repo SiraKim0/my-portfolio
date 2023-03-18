@@ -13,19 +13,17 @@
 .blogs-card {
   @apply m-3 flex h-full w-full transform flex-col
         rounded-xl border border-gray-300 transition duration-300
-        hover:scale-105
-        hover:text-blue-600
-        hover:shadow-lg
+      hover:bg-slate-100
         dark:border-gray-200/50
-
-        dark:hover:shadow-gray-400/40;
+      dark:hover:bg-slate-700;
 }
 .project-card {
-  @apply m-3 flex h-full w-full transform flex-col
-        rounded-xl border border-gray-300 transition duration-300
+  @apply m-3 flex h-full w-full transform
+        flex-col rounded-xl border border-gray-300
+        transition
+        duration-300 hover:bg-slate-100
         dark:border-gray-200/50
-
-        dark:hover:shadow-gray-400/40;
+        dark:hover:bg-slate-700;
 }
 
 h1,
