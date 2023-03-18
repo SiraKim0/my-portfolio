@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 import BlogItem from "@/components/blog/blogs-item";
 import { NotionPostDataType } from "@/types";
 import notionService from "../api";
-import { DATABASE_ID } from "@/config";
+import { BLOG_DATABASE_ID } from "@/config";
 import { AxiosResponse } from "axios";
 
 type blogProps = {
@@ -50,7 +50,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const res = await notionService.post<
     NotionPostDataType,
     AxiosResponse<NotionPostDataType>
-  >(`/databases/${DATABASE_ID}/query`);
+  >(`/databases/${BLOG_DATABASE_ID}/query`);
 
   const blogs = res.data;
 

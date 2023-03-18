@@ -7,7 +7,7 @@ import {
 import Layout from "../../components/layout";
 import { useRouter } from "next/router";
 import notionService from "../api";
-import { DATABASE_ID } from "@/config";
+import { BLOG_DATABASE_ID } from "@/config";
 import { NotionPostDataType } from "@/types";
 import { AxiosResponse } from "axios";
 import dynamic from "next/dynamic";
@@ -38,7 +38,7 @@ export const getStaticPaths = async () => {
   const res = await notionService.post<
     NotionPostDataType,
     AxiosResponse<NotionPostDataType>
-  >(`/databases/${DATABASE_ID}/query`);
+  >(`/databases/${BLOG_DATABASE_ID}/query`);
   const paths = res.data.results.map((result) => ({
     params: {
       id: result.id,

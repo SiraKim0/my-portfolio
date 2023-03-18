@@ -41,6 +41,7 @@ export interface NotionPropertyType {
   tags: tags;
   slug: RichText;
   title: Title;
+  github: GithubUrl;
 }
 
 export interface RichText {
@@ -111,6 +112,11 @@ export interface TitleText {
   href: null;
   plain_text: string;
   type: "text";
+}
+export interface GithubUrl {
+  id: string;
+  type: string;
+  url: string;
 }
 
 export type statusFilter = {
