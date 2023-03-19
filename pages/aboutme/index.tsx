@@ -1,9 +1,10 @@
 import Layout from "@/components/layout";
+import AboutItem from "@/components/about/about-item";
 
 export default function AboutMe() {
   return (
     <Layout>
-      <h1>aboutme</h1>
+      <AboutItem />
     </Layout>
   );
 }
