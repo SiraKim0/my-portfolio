@@ -1,6 +1,3 @@
-import Link from "next/link";
-import DarkModeToggleButton from "./dark-mode";
-
 export default function Footer() {
   return (
     <footer className="body-font text-gray-600">
