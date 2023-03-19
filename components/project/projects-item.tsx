@@ -27,16 +27,17 @@ const ProjectItem = ({
 }: Props) => {
   return (
     <div className="project-card">
-      <Image
-        className="h-64 w-full rounded-t-xl"
-        alt="cover image"
-        src={cover}
-        width={200}
-        height={100}
-        style={{ objectFit: "cover" }}
-        quality={100}
-      />
       <Link href={githubUrl} target="_blank">
+        <Image
+          className="h-64 w-full rounded-t-xl"
+          alt="cover image"
+          src={cover}
+          width={200}
+          height={100}
+          style={{ objectFit: "cover" }}
+          quality={100}
+        />
+
         <div className="sx:w-full grid grid-cols-1 gap-8 p-5 md:grid-cols-4">
           <div className="col-span-4 mt-6">
             <h1 className="text-2xl font-bold sm:text-3xl">{title}</h1>

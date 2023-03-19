@@ -11,7 +11,7 @@ type blogProps = {
 };
 
 const Blog: NextPage<blogProps> = ({ blogs }) => {
-  console.log("blogs:", blogs);
+  // console.log("blogs:", blogs);
   return (
     <Layout>
       <Head>

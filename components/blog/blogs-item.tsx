@@ -24,7 +24,7 @@ export default function BlogItem({
   return (
     <Link href={`blog/${id}`}>
       <div className="blogs-card">
-        <div className="sx:w-full grid grid-cols-1 md:grid-cols-4">
+        <div className="sx:w-full grid grid-cols-1 items-end md:grid-cols-4">
           <div className="col-span-3 mt-6">
             <h1 className="text-2xl font-bold sm:text-3xl">{title}</h1>
             <h3 className="mt-4 text-xl">{description}</h3>
@@ -39,6 +39,7 @@ export default function BlogItem({
               ))}
             </div>
           </div>
+          <h3>작성일: {date}</h3>
         </div>
       </div>
     </Link>

@@ -1,10 +1,10 @@
 const AboutItem = () => {
   return (
     <>
-      <section className="body-font bg-gray-900 text-gray-400">
+      <section className="body-font text-gray-400">
         <div className="container mx-auto px-5 pt-24 pb-10">
           <div className="mx-auto w-full text-center lg:w-3/4 xl:w-2/3">
-            <h2 className="title-font text-2xl font-medium tracking-wider text-white">
+            <h2 className="title-font text-2xl font-medium tracking-wider">
               시각디자이너에서 프론트엔드 개발을 선택하기까지의 과정
             </h2>
             <span className="mt-8 mb-6 inline-block h-1 w-10 rounded bg-indigo-500"></span>
@@ -22,11 +22,11 @@ const AboutItem = () => {
           </div>
         </div>
       </section>
-      <section className="body-font bg-gray-900 text-gray-400">
+      <section className="body-font text-gray-400">
         <div className="container mx-auto flex flex-wrap px-5 py-24">
           <div className="relative mx-auto flex pt-10 pb-20 sm:items-center md:w-2/3">
             <div className="absolute inset-0 flex h-full w-6 items-center justify-center">
-              <div className="pointer-events-none h-full w-1 bg-gray-800"></div>
+              <div className="pointer-events-none h-full w-1 bg-gray-800 dark:bg-slate-200"></div>
             </div>
             <div className="title-font relative z-10 mt-10 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-indigo-500 text-sm font-medium text-white sm:mt-0">
               1
@@ -58,7 +58,7 @@ const AboutItem = () => {
           </div>
           <div className="relative mx-auto flex pb-20 sm:items-center md:w-2/3">
             <div className="absolute inset-0 flex h-full w-6 items-center justify-center">
-              <div className="pointer-events-none h-full w-1 bg-gray-800"></div>
+              <div className="pointer-events-none h-full w-1 bg-gray-800 dark:bg-slate-200"></div>
             </div>
             <div className="title-font relative z-10 mt-10 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-indigo-500 text-sm font-medium text-white sm:mt-0">
               2
@@ -91,7 +91,7 @@ const AboutItem = () => {
           </div>
           <div className="relative mx-auto flex pb-20 sm:items-center md:w-2/3">
             <div className="absolute inset-0 flex h-full w-6 items-center justify-center">
-              <div className="pointer-events-none h-full w-1 bg-gray-800"></div>
+              <div className="pointer-events-none h-full w-1 bg-gray-800 dark:bg-slate-200"></div>
             </div>
             <div className="title-font relative z-10 mt-10 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-indigo-500 text-sm font-medium text-white sm:mt-0">
               3

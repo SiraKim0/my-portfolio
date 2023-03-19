@@ -1,5 +1,6 @@
 import Animation from "./animation";
 import Link from "next/link";
+import { Url } from "@/route/url";
 
 export default function Hero() {
   return (
@@ -11,14 +12,18 @@ export default function Hero() {
           프론트엔드 개발자 김시라입니다.
         </h1>
         <p className="mb-8 leading-relaxed">
-          저에 대하여 궁금하시다면 아래 링크를 확인해주세요
+          저의 홈페이지에서 간단한 소개 글과 프로젝트 및 블로그 글을 확인할 수
+          있습니다. <br /> 저에 대하여 궁금하시다면 아래 버튼을 클릭하여 확인할
+          수 있습니다.
         </p>
         <div className="flex justify-center">
           <Link href="/project" legacyBehavior>
             <a className="btn-blog">프로젝트 보러가기</a>
           </Link>
-          <Link href="/blog" legacyBehavior>
-            <a className="btn-blog">이력서</a>
+          <Link href={Url.RESUME} legacyBehavior>
+            <a className="btn-blog" target="_blank">
+              이력서
+            </a>
           </Link>
         </div>
       </div>
