@@ -1,6 +1,7 @@
 # my-portfolio
 
-NotionAPI를 활용한 Nextjs 포트폴리오 입니다.
+NotionAPI를 활용한 Nextjs 포트폴리오 입니다. <br /><br />
+<b>배포링크</b>: [보러가기](https://my-portfolio-orcin-one.vercel.app/)
 
 ## 기간
 
