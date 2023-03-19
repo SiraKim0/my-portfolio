@@ -23,6 +23,9 @@ export interface NotionPostType {
     external: {
       url: string;
     };
+    file: {
+      url: string;
+    };
   };
   icon: null;
   parent: {

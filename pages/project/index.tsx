@@ -3,9 +3,6 @@ import Head from "next/head";
 import ProjectItem from "@/components/project/projects-item";
 import Layout from "@/components/layout";
 import { NotionPostDataType } from "@/types";
-import notionService from "../api";
-import { PROJECT_DATABASE_ID } from "@/config";
-import { AxiosResponse } from "axios";
 import { getNotionProjectPost } from "../api/notionApi";
 
 type projectProps = {
@@ -13,7 +10,7 @@ type projectProps = {
 };
 
 const Project: NextPage<projectProps> = ({ projects }) => {
-  console.log(projects);
+  // console.log(projects);
   return (
     <Layout>
       <Head>
@@ -43,7 +40,7 @@ const Project: NextPage<projectProps> = ({ projects }) => {
               id={aProject.id}
               start={aProject.properties.date.date.start}
               end={aProject.properties.date.date.end}
-              cover={aProject.cover.external.url}
+              cover={aProject.cover.file?.url || aProject.cover.external.url}
               githubUrl={aProject.properties.github.url}
             />
           ))}
