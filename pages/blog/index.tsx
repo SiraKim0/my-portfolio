@@ -24,7 +24,7 @@ const Blog: NextPage<blogProps> = ({ blogs }) => {
           <span className="mt-8 mb-6 inline-block h-1 w-10 rounded bg-indigo-500"></span>
           <h1>
             <p className="mb-8 leading-relaxed">
-              블로그 글을 확인할 수 있습니다
+              작성 완료된 블로그 글을 확인할 수 있습니다
             </p>
           </h1>
           <div className="w-4/6">
@@ -39,7 +39,7 @@ const Blog: NextPage<blogProps> = ({ blogs }) => {
                 }
                 tag={aBlogs.properties.tags.multi_select}
                 id={aBlogs.id}
-                cover={aBlogs.cover.external.url}
+                cover={aBlogs.cover.external?.url}
               />
             ))}
           </div>
