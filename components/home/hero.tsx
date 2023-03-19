@@ -14,11 +14,11 @@ export default function Hero() {
           저에 대하여 궁금하시다면 아래 링크를 확인해주세요
         </p>
         <div className="flex justify-center">
-          <Link href="/blogs" legacyBehavior>
-            <a className="btn-blog">github</a>
+          <Link href="/project" legacyBehavior>
+            <a className="btn-blog">프로젝트 보러가기</a>
           </Link>
-          <Link href="/blogs" legacyBehavior>
-            <a className="btn-blog">resume</a>
+          <Link href="/blog" legacyBehavior>
+            <a className="btn-blog">이력서</a>
           </Link>
         </div>
       </div>

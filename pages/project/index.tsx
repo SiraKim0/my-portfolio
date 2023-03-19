@@ -17,9 +17,18 @@ const Project: NextPage<projectProps> = ({ projects }) => {
   return (
     <Layout>
       <Head>
-        <title>시라의 포트폴리오</title>
+        <title>시라의 프로젝트</title>
         <meta name="description" content="나만의 포트폴리오 만들기" />
       </Head>
+      <div className="mt-10 flex flex-col items-center">
+        <h1 className="text-3xl">프로젝트</h1>
+        <span className="mt-8 mb-6 inline-block h-1 w-10 rounded bg-indigo-500"></span>
+        <h1>
+          <p className="mb-8 leading-relaxed">
+            내용을 클릭하면 프로젝트 깃허브 레파지토리를 확인할 수 있습니다.
+          </p>
+        </h1>
+      </div>
       <div className="m-4 grid grid-cols-1 gap-8 p-12 md:grid-cols-2">
         {projects &&
           projects.results.map((aProject) => (

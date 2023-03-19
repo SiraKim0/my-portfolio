@@ -9,7 +9,7 @@ const BlogPostDetail = ({ data }: any) => {
   console.log(data);
   if (!data) return <>Loading</>;
   return (
-    <div className="mr-10 ml-10">
+    <div>
       <NotionRenderer
         recordMap={data}
         fullPage={true}

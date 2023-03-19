@@ -7,12 +7,14 @@
 }
 
 .btn-blog {
-  @apply inline-flex rounded border-0 bg-indigo-500 py-2 px-6 text-lg text-white hover:bg-indigo-600 focus:outline-none dark:text-white;
+  @apply m-1 inline-flex rounded border-0 bg-indigo-500 py-2 px-6 text-lg 
+  text-white hover:bg-indigo-600 focus:outline-none
+  dark:text-white;
 }
 
 .blogs-card {
-  @apply m-3 flex h-full w-full transform flex-col
-        rounded-xl border border-gray-300 transition duration-300
+  @apply m-3 flex h-full w-full transform flex-col rounded-xl
+        border border-gray-300 pl-5 pb-6 transition duration-700
       hover:bg-slate-100
         dark:border-gray-200/50
       dark:hover:bg-slate-700;
@@ -21,9 +23,12 @@
   @apply m-3 flex h-full w-full transform
         flex-col rounded-xl border border-gray-300
         transition
-        duration-300 hover:bg-slate-100
+        duration-700 hover:bg-slate-100
         dark:border-gray-200/50
         dark:hover:bg-slate-700;
+}
+.notion-collection-column-title-icon {
+  @apply border-l-indigo-400;
 }
 
 h1,
@@ -46,4 +51,26 @@ a {
 
 p {
   @apply text-slate-500 dark:text-slate-400;
+}
+
+.notion-frame,
+.notion-header,
+.notion-page-scroller {
+  @apply dark:bg-slate-800;
+}
+.notion-collection-column-title-icon {
+  @apply dark:bg-slate-100;
+}
+.notion-page span,
+.notion-collection-column-title-body {
+  @apply dark:text-white;
+}
+.notion-page-content-inner div {
+  @apply dark:text-white;
+}
+.notion-collection-page-properties {
+  @apply border-indigo-600 dark:border-b-4;
+}
+.notion-page-content-inner li {
+  @apply dark:text-slate-300;
 }

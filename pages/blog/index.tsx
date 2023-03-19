@@ -1,6 +1,7 @@
 import React from "react";
 import { GetStaticProps, NextPage } from "next";
 import Layout from "@/components/layout";
+import Head from "next/head";
 import BlogItem from "@/components/blog/blogs-item";
 import { NotionPostDataType } from "@/types";
 import { getNotionBlogPost } from "../api/notionApi";
@@ -13,14 +14,20 @@ const Blog: NextPage<blogProps> = ({ blogs }) => {
   console.log("blogs:", blogs);
   return (
     <Layout>
+      <Head>
+        <title>시라의 블로그</title>
+        <meta name="description" content="나만의 포트폴리오 만들기" />
+      </Head>
       {blogs && (
         <div className="mb-10 flex min-h-screen flex-col items-center justify-center px-5 py-10">
+          <h1 className="text-3xl">블로그</h1>
+          <span className="mt-8 mb-6 inline-block h-1 w-10 rounded bg-indigo-500"></span>
           <h1>
-            <span className="pl-4 text-blue-500">
-              총 블로그 글: {blogs?.results.length}
-            </span>
+            <p className="mb-8 leading-relaxed">
+              블로그 글을 확인할 수 있습니다
+            </p>
           </h1>
-          <div className="w-full">
+          <div className="w-4/6">
             {blogs?.results.map((aBlogs) => (
               <BlogItem
                 key={aBlogs.properties.slug.rich_text[0].plain_text}
