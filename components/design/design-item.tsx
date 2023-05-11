@@ -14,20 +14,18 @@ type Props = {
   githubUrl: string;
 };
 
-const ProjectItem = ({
+const DesignItem = ({
   title,
   slug,
   description,
   tag,
   id,
   cover,
-  start,
-  end,
   githubUrl,
 }: Props) => {
   return (
     <div className="project-card">
-      <Link href={`project/${id}`} target="_blank">
+      <Link href={`design/${id}`} target="_blank">
         <Image
           className="h-64 w-full rounded-t-xl"
           alt="cover image"
@@ -42,13 +40,10 @@ const ProjectItem = ({
           <div className="col-span-4 mt-6">
             <h1 className="text-2xl font-bold sm:text-3xl">{title}</h1>
             <h3 className="mt-5 text-xl">{description}</h3>
-            <p className="my-3">
-              작업기간 : {start} ~ {end}
-            </p>
             <div className="mt-5 flex items-start">
               {tag.map((item) => (
                 <h1
-                  className="mr-2 flex-nowrap whitespace-pre rounded-md bg-sky-200 px-2 py-1 dark:bg-sky-700"
+                  className="mr-2 whitespace-pre rounded-md bg-sky-200 px-2 py-1 dark:bg-sky-700"
                   key={item.id}
                 >
                   {item.name}
@@ -61,4 +56,4 @@ const ProjectItem = ({
     </div>
   );
 };
-export default ProjectItem;
+export default DesignItem;

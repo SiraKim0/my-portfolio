@@ -5,7 +5,7 @@ import { Equation } from "react-notion-x/build/third-party/equation";
 import { Modal } from "react-notion-x/build/third-party/modal";
 import { Pdf } from "react-notion-x/build/third-party/pdf";
 
-const BlogPostDetail = ({ data }: any) => {
+const PostsDetail = ({ data }: any) => {
   console.log(data);
   if (!data) return <>Loading</>;
   return (
@@ -24,4 +24,4 @@ const BlogPostDetail = ({ data }: any) => {
     </div>
   );
 };
-export default BlogPostDetail;
+export default PostsDetail;

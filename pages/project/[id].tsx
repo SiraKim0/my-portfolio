@@ -7,36 +7,38 @@ import {
 import Layout from "../../components/layout";
 import { useRouter } from "next/router";
 import notionService from "../api";
-import { BLOG_DATABASE_ID } from "@/config";
+import { PROJECT_DATABASE_ID } from "@/config";
 import { NotionPostDataType } from "@/types";
 import { AxiosResponse } from "axios";
 import dynamic from "next/dynamic";
 import notionApi from "../api/notionApi";
 
-const BlogPostDetail = dynamic(() => import("../../components/posts-detail"));
+const ProjectPostDetail = dynamic(
+  () => import("../../components/posts-detail")
+);
 
-type blogPostProps = {
+type projectPostProps = {
   recordMap: NotionPostDataType;
 };
 
-const BlogPost: NextPage<blogPostProps> = ({ recordMap }) => {
+const ProjectPost: NextPage<projectPostProps> = ({ recordMap }) => {
   const { id } = useRouter().query;
   console.log(recordMap);
 
   return (
     <Layout>
-      <BlogPostDetail data={recordMap} />
+      <ProjectPostDetail data={recordMap} />
     </Layout>
   );
 };
 
-export default BlogPost;
+export default ProjectPost;
 
 export const getStaticPaths = async () => {
   const res = await notionService.post<
     NotionPostDataType,
     AxiosResponse<NotionPostDataType>
-  >(`/databases/${BLOG_DATABASE_ID}/query`);
+  >(`/databases/${PROJECT_DATABASE_ID}/query`);
   const paths = res.data.results.map((result) => ({
     params: {
       id: result.id,
@@ -48,19 +50,6 @@ export const getStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({
   params,
 }: GetStaticPropsContext) => {
-  //1
-  // const notion = new Client({ auth: process.env.NOTION_TOKEN });
-  // const blockID = params?.id?.toString() || "";
-  // const posts = await notion.blocks.children.list({
-  //   block_id: blockID,
-  // });
-  // return {
-  //   props: {
-  //     posts,
-  //   },
-  // };
-
-  //2
   const pageId = params?.id?.toString() || "";
   const recordMap = await notionApi.getPage(pageId);
   return {

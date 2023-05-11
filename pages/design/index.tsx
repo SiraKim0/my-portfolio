@@ -1,16 +1,16 @@
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import ProjectItem from "@/components/project/projects-item";
+import DesignItem from "@/components/design/design-item";
 import Layout from "@/components/layout";
 import { NotionPostDataType } from "@/types";
-import { getNotionProjectPost } from "../api/notionApi";
+import { getNotionDesignPost } from "../api/notionApi";
 
-type projectProps = {
-  projects: NotionPostDataType;
+type designProps = {
+  design: NotionPostDataType;
 };
 
-const Project: NextPage<projectProps> = ({ projects }) => {
-  // console.log(projects);
+const Design: NextPage<designProps> = ({ design }) => {
+  // console.log(design);
   return (
     <Layout>
       <Head>
@@ -18,7 +18,7 @@ const Project: NextPage<projectProps> = ({ projects }) => {
         <meta name="description" content="나만의 포트폴리오 만들기" />
       </Head>
       <div className="mt-10 flex flex-col items-center">
-        <h1 className="text-3xl">웹 프로젝트</h1>
+        <h1 className="text-3xl">UI/UX 웹 디자인</h1>
         <span className="mt-8 mb-6 inline-block h-1 w-10 rounded bg-indigo-500"></span>
         <h1>
           <p className="mb-8 leading-relaxed">
@@ -28,9 +28,9 @@ const Project: NextPage<projectProps> = ({ projects }) => {
         </h1>
       </div>
       <div className="m-4 grid grid-cols-1 gap-8 p-12 md:grid-cols-2">
-        {projects &&
-          projects.results.map((aProject) => (
-            <ProjectItem
+        {design &&
+          design.results.map((aProject) => (
+            <DesignItem
               key={aProject.properties.slug.rich_text[0].plain_text}
               title={aProject.properties.title.title[0].plain_text}
               slug={aProject.properties.slug.rich_text[0].plain_text}
@@ -49,10 +49,10 @@ const Project: NextPage<projectProps> = ({ projects }) => {
     </Layout>
   );
 };
-export default Project;
+export default Design;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await getNotionProjectPost({
+  const res = await getNotionDesignPost({
     filter: {
       property: "status",
       status: {
@@ -67,11 +67,11 @@ export const getStaticProps: GetStaticProps = async () => {
     ],
   });
 
-  const projects = res.data;
+  const design = res.data;
 
   return {
     props: {
-      projects,
+      design,
     },
     revalidate: 60,
   };
